@@ -1,0 +1,128 @@
+================================================================================
+                           SETUP IN 3 STEPS
+================================================================================
+
+YOU HAVE:
+✅ Smart failover system implemented
+✅ Backend compiled and ready
+✅ Groq already configured
+✅ Just need Gemini API key
+
+================================================================================
+STEP 1: GET GEMINI API KEY (2 minutes)
+================================================================================
+
+1. Open: https://aistudio.google.com/apikey
+
+2. Click "Create API Key"
+
+3. Select project or create new one
+
+4. Click "Create"
+
+5. Copy the key (looks like: AIzaSy_XXXXXXXXXXXXXXXXXXXXXXXXXXXX)
+
+DONE! You now have your Gemini API key.
+
+================================================================================
+STEP 2: UPDATE CONFIGURATION (1 minute)
+================================================================================
+
+1. Open file:
+   c:\Users\Selva\Desktop\projectjul03\careerpilot-backend\src\main\resources\application.properties
+
+2. Find line (around 83):
+   gemini.api-key=YOUR_GEMINI_API_KEY_HERE
+
+3. Replace with your actual key:
+   gemini.api-key=AIzaSy_YOUR_ACTUAL_KEY_HERE
+
+4. Save file (Ctrl+S)
+
+DONE! Configuration updated.
+
+================================================================================
+STEP 3: START BACKEND (1 minute)
+================================================================================
+
+1. Open terminal in backend directory:
+   cd c:\Users\Selva\Desktop\projectjul03\careerpilot-backend
+
+2. Start backend:
+   mvn spring-boot:run
+
+3. Wait for message:
+   "Tomcat started on port(s): 8080"
+
+DONE! Backend is running.
+
+================================================================================
+TEST IT
+================================================================================
+
+1. Open browser: http://localhost:3000
+
+2. Log in to your account
+
+3. Go to "Mock Interview"
+
+4. Select a job role
+
+5. Click "Generate Question"
+
+EXPECTED: Question appears ✅
+
+If error:
+- Check Gemini API key is correct (no typos)
+- Check file was saved
+- Restart backend
+
+================================================================================
+HOW IT WORKS AUTOMATICALLY
+================================================================================
+
+WHEN YOU USE THE APP:
+
+First request:
+  ✅ Tries Gemini (your primary)
+  ✅ If works → You get response from Gemini
+  ✅ If fails → Automatically tries Groq
+
+Groq takes over:
+  ✅ If Gemini rate limited
+  ✅ If Gemini offline
+  ✅ Any error from Gemini
+
+You never see errors:
+  ✅ Either Gemini works
+  ✅ Or Groq takes over
+  ✅ Or you get error (both down)
+
+Logs show which was used:
+  Check backend logs for:
+  - "✅ Gemini API succeeded"
+  - "✅ Groq API succeeded (FALLBACK)"
+
+================================================================================
+THAT'S IT!
+================================================================================
+
+Total time: 4 minutes
+Complexity: Simple (just copy-paste API key)
+Result: Production-grade dual-provider system ✅
+
+Your system now has:
+✅ Gemini as primary (best quality)
+✅ Groq as fallback (free backup)
+✅ Automatic switching (on any error)
+✅ Live health monitoring (tracks if working)
+✅ Smart logging (see which provider used)
+
+Everything works automatically. Just use your app!
+
+Questions? See:
+- SMART_FAILOVER_SYSTEM.txt (detailed explanation)
+- AI_MODEL_ANALYSIS.txt (why this approach)
+- PROJECT_DOCUMENTATION.txt (full project docs)
+
+================================================================================

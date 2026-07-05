@@ -1,0 +1,43 @@
+/* ============================================================
+   DASHBOARD LAYOUT — Navbar + Sidebar + Main content area
+   ============================================================ */
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--color-bg);
+}
+
+.layout__body {
+  display: flex;
+  flex: 1;
+  padding-top: var(--navbar-height);
+}
+
+.layout__main {
+  flex: 1;
+  min-width: 0;
+  transition: margin-left var(--transition-slow);
+  margin-left: 0;
+}
+
+/* On desktop, when sidebar is open, shift main content right */
+@media (min-width: 1024px) {
+  .layout__main--shifted {
+    margin-left: var(--sidebar-width);
+  }
+}
+
+.layout__content {
+  padding: var(--space-8);
+  max-width: var(--content-max-width);
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .layout__content {
+    padding: var(--space-4);
+  }
+}

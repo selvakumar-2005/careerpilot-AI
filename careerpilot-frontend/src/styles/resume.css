@@ -1,0 +1,64 @@
+/* ============================================================
+   RESUME PAGE
+   ============================================================ */
+
+.resume-page { display: flex; flex-direction: column; gap: var(--space-8); }
+
+/* Upload zone */
+.upload-zone {
+  border: 2.5px dashed var(--color-border-dark);
+  border-radius: var(--radius-xl);
+  padding: var(--space-12) var(--space-8);
+  text-align: center;
+  cursor: pointer;
+  transition: border-color var(--transition-normal), background var(--transition-normal);
+  background: var(--color-surface);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+}
+.upload-zone:hover, .upload-zone--active {
+  border-color: var(--color-primary);
+  background: var(--color-primary-light);
+}
+.upload-zone--loading { cursor: not-allowed; opacity: 0.7; }
+.upload-zone__icon    { font-size: 3rem; }
+.upload-zone__title   { font-size: var(--font-size-lg); font-weight: 600; color: var(--color-secondary); }
+.upload-zone__hint    { font-size: var(--font-size-sm); color: var(--color-text-muted); }
+
+/* Resume list */
+.resume-list-section  { display: flex; flex-direction: column; gap: var(--space-4); }
+.section-label        { font-size: var(--font-size-xl); font-weight: 700; color: var(--color-secondary); display: flex; align-items: center; gap: var(--space-3); }
+.section-label__count { background: var(--color-primary); color: #fff; border-radius: var(--radius-full); font-size: var(--font-size-xs); padding: 2px 8px; font-weight: 700; }
+.resume-list          { display: flex; flex-direction: column; gap: var(--space-3); }
+
+.resume-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5) var(--space-6);
+  transition: box-shadow var(--transition-fast);
+}
+.resume-card:hover       { box-shadow: var(--shadow-md); }
+.resume-card__icon       { font-size: 2rem; flex-shrink: 0; }
+.resume-card__info       { flex: 1; min-width: 0; }
+.resume-card__name       { font-weight: 600; color: var(--color-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.resume-card__meta       { font-size: var(--font-size-xs); color: var(--color-text-muted); margin-top: 2px; }
+.resume-card__actions    { display: flex; gap: var(--space-2); flex-shrink: 0; }
+
+/* Status badges */
+.status-badge            { display: inline-block; padding: 2px 10px; border-radius: var(--radius-full); font-size: var(--font-size-xs); font-weight: 600; margin-top: var(--space-1); }
+.status-badge--active    { background: #DCFCE7; color: #166534; }
+.status-badge--uploaded  { background: #DBEAFE; color: #1e40af; }
+.status-badge--deleted   { background: #FEE2E2; color: #991B1B; }
+
+.btn--danger:hover { background: #FEE2E2; color: var(--color-error); border-color: var(--color-error); }
+
+@media (max-width: 600px) {
+  .resume-card { flex-wrap: wrap; }
+  .resume-card__actions { width: 100%; justify-content: flex-end; }
+}

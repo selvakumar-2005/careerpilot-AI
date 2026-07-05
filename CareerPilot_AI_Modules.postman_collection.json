@@ -1,0 +1,283 @@
+{
+  "info": {
+    "name": "CareerPilot AI Modules",
+    "description": "Complete API collection for 6 AI-powered modules (Resume, Coding, Career, Interview, Company, Chat)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Authentication",
+      "item": [
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"user@example.com\",\n  \"password\": \"password123\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/auth/login",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "auth", "login"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Resume AI",
+      "item": [
+        {
+          "name": "Analyze Resume",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"resume_text\": \"I am a full-stack developer with 5 years of experience in Java, JavaScript, React, and Spring Boot. I have led teams, mentored juniors, and delivered 10+ projects. Strong in system design and cloud technologies.\",\n  \"user_profile\": \"Software Engineer looking for senior positions\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/ai/resume/analyze",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "ai", "resume", "analyze"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Coding AI",
+      "item": [
+        {
+          "name": "Analyze Code",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"problem_description\": \"Reverse a linked list. Given the head of a singly linked list, reverse the list, and return the reversed list.\",\n  \"code\": \"class Solution {\\n    public ListNode reverseList(ListNode head) {\\n        ListNode prev = null;\\n        ListNode curr = head;\\n        while (curr != null) {\\n            ListNode temp = curr.next;\\n            curr.next = prev;\\n            prev = curr;\\n            curr = temp;\\n        }\\n        return prev;\\n    }\\n}\",\n  \"language\": \"java\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/ai/coding/analyze",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "ai", "coding", "analyze"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Career Guidance",
+      "item": [
+        {
+          "name": "Get Career Guidance",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"current_role\": \"Junior Software Engineer\",\n  \"experience_years\": 2,\n  \"interests\": [\"Cloud Architecture\", \"DevOps\", \"Leadership\"]\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/ai/career/guidance",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "ai", "career", "guidance"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Interview Generator",
+      "item": [
+        {
+          "name": "Generate Interview Questions",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"company\": \"Google\",\n  \"role\": \"Senior Software Engineer\",\n  \"difficulty_level\": \"advanced\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/ai/interview/generate",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "ai", "interview", "generate"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Company Preparation",
+      "item": [
+        {
+          "name": "Get Company Preparation Guide",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"company_name\": \"Microsoft\",\n  \"role\": \"Senior Software Engineer\",\n  \"focus_areas\": [\"System Design\", \"Behavioral Interview\", \"Technical Depth\"]\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/ai/company/prepare",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "ai", "company", "prepare"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Career Chat",
+      "item": [
+        {
+          "name": "Send Chat Message",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"message\": \"What are the best ways to prepare for a system design interview at a FAANG company?\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/ai/chat/message",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "ai", "chat", "message"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Chat History",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/api/ai/chat/history",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "ai", "chat", "history"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Clear Chat History",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/api/ai/chat/clear",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "ai", "chat", "clear"]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "token",
+      "value": "",
+      "type": "string"
+    }
+  ]
+}
