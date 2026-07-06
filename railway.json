@@ -1,7 +1,7 @@
 {
   "build": {
     "builder": "DOCKERFILE",
-    "dockerfilePath": "careerpilot-backend/Dockerfile"
+    "dockerfilePath": "Dockerfile"
   },
   "deploy": {
     "restartPolicyType": "ON_FAILURE",
