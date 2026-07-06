@@ -1,0 +1,8 @@
+[phases.setup]
+nixPkgs = ["jdk21"]
+
+[phases.build]
+cmds = ["cd careerpilot-backend && mvn clean package -DskipTests -q"]
+
+[start]
+cmd = "java -Dspring.profiles.active=prod -jar careerpilot-backend/target/careerpilot-backend-1.0.0.jar"
