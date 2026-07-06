@@ -2,8 +2,9 @@
 FROM node:20-alpine AS build
 WORKDIR /app
 COPY package*.json ./
-RUN npm install
+RUN npm install --legacy-peer-deps
 COPY . .
+ENV CI=false
 RUN npm run build
 
 # Stage 2: Serve with nginx
